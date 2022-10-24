@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="AnalyzerUseExplicitType.67e73b27-47db-43ce-a4d0-b4a540217728" Version="1.0" Language="en-US" Publisher="Robert Gelb"/>
+    <DisplayName>Use Explicit Type Code Fix for Visual Basic</DisplayName>
+    <Description xml:space="preserve">Use Explicit Type code fix for Visual Basic (like in C#)</Description>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+      <!--<ProductArchitecture>amd64</ProductArchitecture>-->
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AnalyzerUseExplicitType" Path="|AnalyzerUseExplicitType|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AnalyzerUseExplicitType" Path="|AnalyzerUseExplicitType|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AnalyzerUseExplicitType.CodeFixes" Path="|AnalyzerUseExplicitType.CodeFixes|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AnalyzerUseExplicitType.CodeFixes" Path="|AnalyzerUseExplicitType.CodeFixes|"/>
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[17.0,18.0)" DisplayName="Roslyn Language Services" />
+  </Prerequisites>
+</PackageManifest>
