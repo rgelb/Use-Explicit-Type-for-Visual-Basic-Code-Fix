@@ -54,7 +54,13 @@ namespace AnalyzerUseExplicitType
                 document.TryGetSemanticModel(out SemanticModel semanticModel);
                 if (semanticModel is null) return document; // can't infer - return original document
 
-                var objTypeName = semanticModel.GetOperation(variableDeclarator.Initializer.Value).Type.Name;
+                var type = semanticModel.GetOperation(variableDeclarator.Initializer.Value).Type;
+
+                //var objTypeName = type.Name;
+                //var isGeneric = false;
+
+                var objTypeName = type.ToMinimalDisplayString(semanticModel, 0);
+
                 SimpleAsClauseSyntax asClause = SyntaxFactory.SimpleAsClause(SyntaxFactory.IdentifierName(objTypeName));
                 VariableDeclaratorSyntax newDeclarator = variableDeclarator.WithAsClause(asClause);
 

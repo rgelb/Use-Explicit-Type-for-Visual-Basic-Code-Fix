@@ -26,6 +26,14 @@
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\AnalyzerUseExplicitType.CodeFixes\AnalyzerUseExplicitType.CodeFixes.csproj" />
     <ProjectReference Include="..\AnalyzerUseExplicitType\AnalyzerUseExplicitType.csproj" />
